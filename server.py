@@ -226,7 +226,10 @@ def elementDoubleWidth (node, state):
 
 def elementLineHeight (node, state):
     if (state):
-        printer.setLineHeight(int(node.attributes['height'].value))
+        if ('thickness' in node.attributes.keys()):
+            printer.setLineHeight(int(node.attributes['height'].value))
+        else:
+            printer.setLineHeight()
 
 # ------------------------------------------------------------------------
 # Font elements
