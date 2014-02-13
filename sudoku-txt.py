@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 #
 # Sudoku Generator and Solver in 250 lines of python
 # Copyright (c) 2006 David Bau.  All rights reserved.
@@ -22,7 +22,7 @@ from __future__ import print_function
 import sys, os, random, getopt, re
 from Adafruit_Thermal import *
 
-printer = Adafruit_Thermal("/dev/ttyAMA0", 19200, timeout=5)
+printer = Adafruit_Thermal("/dev/tty.NoZAP-PL2303-00005014", 19200, timeout=5)
 
 def main():
   printer.setLineHeight(24) # So graphical chars fit together

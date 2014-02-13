@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # Weather forecast for Raspberry Pi w/Adafruit Mini Thermal Printer.
 # Retrieves data from Yahoo! weather, prints current conditions and
@@ -39,7 +39,7 @@ def forecast(idx):
 	printer.print(deg)
 	printer.println(' ' + cond)
 
-printer = Adafruit_Thermal("/dev/ttyUSB0", 19200, timeout=5)
+printer = Adafruit_Thermal("/dev/tty.NoZAP-PL2303-00005014", 19200, timeout=5)
 deg     = chr(0xf8) # Degree symbol on thermal printer
 
 # Fetch forecast data from Yahoo!, parse resulting XML

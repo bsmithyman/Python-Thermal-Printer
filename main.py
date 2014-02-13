@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # Main script for Adafruit Internet of Things Printer 2.  Monitors button
 # for taps and holds, performs periodic actions (Twitter polling by default)
@@ -26,7 +26,7 @@ tapTime      = 0.01  # Debounce time for button taps
 nextInterval = 0.0   # Time of next recurring operation
 dailyFlag    = False # Set after daily trigger occurs
 lastId       = '1'   # State information passed to/from interval script
-printer      = Adafruit_Thermal("/dev/ttyAMA0", 19200, timeout=5)
+printer      = Adafruit_Thermal("/dev/tty.NoZAP-PL2303-00005014", 19200, timeout=5)
 
 
 # Called when button is briefly tapped.  Invokes time/temperature script.

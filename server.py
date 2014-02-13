@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # ========================================================================
 # Written by Brendan Smithyman <brendan@bitsmithy.net>, May 2013
@@ -54,7 +54,7 @@ appkwargs = {
 }
 
 # Options for thermal printer
-printerargs = ['/dev/ttyUSB0', 19200]
+printerargs = ['/dev/tty.NoZAP-PL2303-00005014', 19200]
 
 # The form that is returned in response to an HTTP GET
 htmlform = '''\

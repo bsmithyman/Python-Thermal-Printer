@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 import numpy as np
 
@@ -49,7 +49,7 @@ canvas.draw()
 l,b,w,h = [int(item) for item in canvas.figure.bbox.bounds]
 im = Image.fromstring("RGB", (w,h), canvas.tostring_rgb()).rotate(90)
 
-printer = Adafruit_Thermal("/dev/ttyUSB0", 19200, timeout=5)
+printer = Adafruit_Thermal("/dev/tty.NoZAP-PL2303-00005014", 19200, timeout=5)
 printer.begin()
 printer.printImage(im, True)
 printer.feed(2)

@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # Current time and temperature display for Raspberry Pi w/Adafruit Mini
 # Thermal Printer.  Retrieves data from Yahoo! weather, prints current
@@ -163,6 +163,6 @@ if windUnits == 'kph': img.paste(Kph, (x, y))
 else:                  img.paste(Mph, (x, y))
 
 # Open connection to printer and print image
-printer = Adafruit_Thermal("/dev/ttyAMA0", 19200, timeout=5)
+printer = Adafruit_Thermal("/dev/tty.NoZAP-PL2303-00005014", 19200, timeout=5)
 printer.printImage(img, True)
 printer.feed(3)

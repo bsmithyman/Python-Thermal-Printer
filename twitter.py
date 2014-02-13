@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 
 # This is a Python port of Adafruit's "Gutenbird" sketch for Arduino.
 # Polls one or more Twitter accounts for changes, displaying updates
@@ -27,7 +27,7 @@ queryString = 'from:Adafruit'
 
 # These shouldn't need to be changed:
 serverName  = 'search.twitter.com'
-printer     = Adafruit_Thermal("/dev/ttyAMA0", 19200, timeout=5)
+printer     = Adafruit_Thermal("/dev/tty.NoZAP-PL2303-00005014", 19200, timeout=5)
 # lastID is command line value (if passed), else 1
 if len(sys.argv) > 1: lastId = sys.argv[1]
 else:                 lastId = '1'
