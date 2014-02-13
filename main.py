@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 
 # Main script for Adafruit Internet of Things Printer 2.  Monitors button
 # for taps and holds, performs periodic actions (Twitter polling by default)

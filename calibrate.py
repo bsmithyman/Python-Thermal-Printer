@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 #
 # Thermal calibration utility for Adafruit_Thermal Python library.
 # Run this utility before using the printer for the first time, any
@@ -23,7 +23,7 @@
 from __future__ import print_function
 from Adafruit_Thermal import *
 
-printer = Adafruit_Thermal("/dev/ttyAMA0", 19200, timeout=5)
+printer = Adafruit_Thermal("/dev/ttyUSB0", 19200, timeout=5)
 
 for i in range(0,256,15):
 	printer.begin(i)

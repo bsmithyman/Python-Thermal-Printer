@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 
 # This is a Python port of Adafruit's "Gutenbird" sketch for Arduino.
 # Polls one or more Twitter accounts for changes, displaying updates

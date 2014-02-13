@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 #
 # Sudoku Generator and Solver in 250 lines of python
 # Copyright (c) 2006 David Bau.  All rights reserved.

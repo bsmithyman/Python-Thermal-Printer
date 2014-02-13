@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 
 # Current time and temperature display for Raspberry Pi w/Adafruit Mini
 # Thermal Printer.  Retrieves data from Yahoo! weather, prints current
@@ -23,19 +23,20 @@ import Image, ImageDraw, time, urllib
 # by 'manually' visiting http://weather.yahoo.com, entering a location
 # and requesting a forecast, then copy the number from the end of the
 # current URL string and paste it here.
-WOEID = '2459115'
+WOEID = '9807'
+UNITS = 'c'
 
 # Fetch weather data from Yahoo!, parse resulting XML
 dom = parseString(urllib.urlopen(
-        'http://weather.yahooapis.com/forecastrss?w=' + WOEID).read())
+        'http://weather.yahooapis.com/forecastrss?w=%s&u=%s'%(WOEID,UNITS)).read())
 
 # Extract values relating to current temperature, humidity, wind
 temperature = int(dom.getElementsByTagName(
                 'yweather:condition')[0].getAttribute('temp'))
 humidity    = int(dom.getElementsByTagName(
                 'yweather:atmosphere')[0].getAttribute('humidity'))
-windSpeed   = int(dom.getElementsByTagName(
-                'yweather:wind')[0].getAttribute('speed'))
+windSpeed   = round(float(dom.getElementsByTagName(
+                'yweather:wind')[0].getAttribute('speed')))
 windDir     = int(dom.getElementsByTagName(
                 'yweather:wind')[0].getAttribute('direction'))
 windUnits   = dom.getElementsByTagName(

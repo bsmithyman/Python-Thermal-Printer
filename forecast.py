@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 
 # Weather forecast for Raspberry Pi w/Adafruit Mini Thermal Printer.
 # Retrieves data from Yahoo! weather, prints current conditions and
@@ -23,7 +23,8 @@ from xml.dom.minidom import parseString
 # by 'manually' visiting http://weather.yahoo.com, entering a location
 # and requesting a forecast, then copy the number from the end of the
 # current URL string and paste it here.
-WOEID = '2459115'
+WOEID = '9807'
+UNITS = 'c'
 
 # Dumps one forecast line to the printer
 def forecast(idx):
@@ -38,12 +39,12 @@ def forecast(idx):
 	printer.print(deg)
 	printer.println(' ' + cond)
 
-printer = Adafruit_Thermal("/dev/ttyAMA0", 19200, timeout=5)
+printer = Adafruit_Thermal("/dev/ttyUSB0", 19200, timeout=5)
 deg     = chr(0xf8) # Degree symbol on thermal printer
 
 # Fetch forecast data from Yahoo!, parse resulting XML
 dom = parseString(urllib.urlopen(
-        'http://weather.yahooapis.com/forecastrss?w=' + WOEID).read())
+        'http://weather.yahooapis.com/forecastrss?w=%s&u=%s'%(WOEID,UNITS)).read())
 
 # Print heading
 printer.inverseOn()
