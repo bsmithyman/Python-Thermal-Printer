@@ -230,6 +230,7 @@ def elementLineHeight (node, state):
             printer.setLineHeight(int(node.attributes['height'].value))
         else:
             printer.setLineHeight()
+        printer.setLineHeight(int(node.attributes['height'].value))
 
 # ------------------------------------------------------------------------
 # Font elements
