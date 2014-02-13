@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<printout>
+<!-- Test inverse on & off -->
+<inverse>Inverse ON<br /></inverse>
+
+<!-- Test character double-height on & off -->
+<doubleheight>Double Height ON<br /></doubleheight>
+
+<!-- Test justification (right, center, left) -->
+<right>Right justified<br /></right>
+<center>Center justified<br /></center>
+<left>Left justified<br /></left>
+
+<!-- Test more styles -->
+<bold>Bold text<br /></bold>
+<underline>Underlined text<br /></underline>
+<large>Large<br /></large>
+<medium>Medium<br /></medium>
+<small>Small<br /></small>
+</center>
+</printout>
