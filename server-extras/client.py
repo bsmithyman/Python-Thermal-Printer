@@ -3,7 +3,7 @@
 import sys
 import urllib2
 
-posturl = 'http://192.168.48.16:5000/xml'
+posturl = 'http://127.0.0.1:5000/xml'
 headers = {
   'Content-Type':	'text/xml',
 }
